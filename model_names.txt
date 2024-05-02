@@ -1,0 +1,35 @@
+Model size: 7,067,942,912 bytes
+LlamaForCausalLM(
+  (model): LlamaModel(
+    (embed_tokens): Embedding(32000, 4096, padding_idx=0)
+    (layers): ModuleList(
+      (0-31): 32 x LlamaDecoderLayer(
+        (self_attn): LlamaSdpaAttention(
+          (q_proj): Linear8bitLt(in_features=4096, out_features=4096, bias=False)
+          (k_proj): Linear8bitLt(in_features=4096, out_features=4096, bias=False)
+          (v_proj): Linear8bitLt(in_features=4096, out_features=4096, bias=False)
+          (o_proj): Linear8bitLt(in_features=4096, out_features=4096, bias=False)
+          (rotary_emb): LlamaRotaryEmbedding()
+        )
+        (mlp): LlamaMLP(
+          (gate_proj): Linear8bitLt(in_features=4096, out_features=11008, bias=False)
+          (up_proj): Linear8bitLt(in_features=4096, out_features=11008, bias=False)
+          (down_proj): Linear8bitLt(in_features=11008, out_features=4096, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): LlamaRMSNorm()
+        (post_attention_layernorm): LlamaRMSNorm()
+      )
+    )
+    (norm): LlamaRMSNorm()
+  )
+  (lm_head): Linear(in_features=4096, out_features=32000, bias=False)
+)
+tensor([[ -7, -16,  -2,  ...,   5,   2,  -4],
+        [  9,  -3,   2,  ...,  -6,  -7,   5],
+        [ -7,   6,   0,  ...,   3,   9,  -2],
+        ...,
+        [  1,   6,   0,  ...,   5, -17,   5],
+        [ 20,   9,   3,  ..., -26, -13,  -9],
+        [-11,  -6,   1,  ...,  14,  14,  -7]], device='cuda:0',
+       dtype=torch.int8)
